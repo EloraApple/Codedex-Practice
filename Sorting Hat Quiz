@@ -1,0 +1,71 @@
+# Intialize house scores
+
+G=0
+R=0
+H=0
+S=0
+
+#Start quiz
+print('Are you ready to get sorted?\n')
+
+#Question 1
+q1=int(input('Q1) Do you like Dawn or Dusk? \n 1) Dawn \n 2) Dusk \n'))
+
+if q1==1:
+  G=G+1
+  R=R+1
+elif q1==2:
+  H=H+1
+  S=S+1
+else:
+  print('Wrong Input')
+
+#Question 2
+q2=int(input('\nQ2) When I’m dead, I want people to remember me as:\n1) The Good \n2) The Great \n3) The Wise \n4) The Bold \n'))
+
+if q2==1:
+  H=H+2
+elif q2==2:
+  S=S+2
+elif q2==3:
+  R=R+2
+elif q2==4:
+  G=G+2
+else:
+  print('Wrong Input') 
+
+#Question 3
+q3=int(input('\nQ3)  Which kind of instrument most pleases your ear? \n1) The violin \n2) The trumpet \n3) The piano \n4) The drum \n'))
+
+if q3==1:
+  S=S+4
+elif q3==2:
+  H=H+4
+elif q3==3:
+  R=R+4
+elif q3==4:
+  G=G+4
+else:
+  print('Wrong Input') 
+
+# Determine the house with the highest score
+scores = {"Gryffindor": G, "Ravenclaw": R, "Hufflepuff": H, "Slytherin": S}
+highest_score = max(scores.values())
+
+# Find the house(s) with the highest score (in case of a tie)
+winners = [house for house, score in scores.items() if score == highest_score]
+
+# Display the winner(s)
+if len(winners) == 1:
+    print(f"\n🏆 You belong to {winners[0]}! 🏆")
+else:
+    print(f"\n🏆 It's a tie between {', '.join(winners)}! 🏆")
+
+#Share all scores
+print('\nFinal Scores:\n')
+
+print('Hufflepuff: ',H)
+print('Gryffindor: ',G)
+print("Ravenclaw: ",R)
+print("Slytherin: ", S)
+exit()
